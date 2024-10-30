@@ -28,3 +28,19 @@ print()
 # 값을 변경합니다.
 dictionary["name"] = "8D 건조 망고"
 print("name:", dictionary["name"])
+
+# 반복문과 리스트 내포
+pets = [
+    {"name" : "구름", "age" : 5},
+    {"name" : "초코", "age" : 4},
+    {"name" : "아지", "age" : 3},
+    {"name" : "호랑이", "age": 1}
+]
+
+pet_names = ", ".join([pet["name"] for pet in pets])
+print(f"우리 동네 강아지들의 이름은 {pet_names}입니다.")
+
+for pet in pets:
+    name = pet["name"]
+    age = pet["age"]
+    print(f"이 강아지의 이름은 {name}, 나이는 {age} 입니다.")
