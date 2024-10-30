@@ -44,3 +44,52 @@ for pet in pets:
     name = pet["name"]
     age = pet["age"]
     print(f"이 강아지의 이름은 {name}, 나이는 {age} 입니다.")
+
+character = {
+    "name" : "기사",
+    "level" : 23,
+    "items" : {
+        "sword" : "불꽃의 검",
+        "armor" : "강철 갑옷"
+    },
+    "skills" : ["베기", "세게 베기", "아주 세게 베기"]
+}
+
+for key in character:
+    value = character[key]
+    if type(value) is str or type(value) is int:
+        print(f"{key} : {value}")
+    elif type(value) is dict:
+        for sub_key, sub_value in value.items():
+            print(f"{sub_key} : {sub_value}")
+    elif type(value) is list:
+        for item in value:
+            print(f"{key} : {item}")
+
+character = {
+    "name": "기사",
+    "level": 23,
+    "items": {
+        "sword": "불꽃의 검",
+        "armor": "강철 갑옷"
+    },
+    "skills": ["베기", "세게 베기", "아주 세게 베기"]
+}
+
+for key in character:
+    value = character[key]  # 각 키에 대한 값 가져오기
+    if isinstance(value, (str, int)):
+        # 값이 문자열이나 숫자일 경우 그대로 출력
+        print(f"{key} : {value}")
+    
+    elif isinstance(value, dict):
+        # 값이 딕셔너리일 경우 내부 키-값 쌍을 개별적으로 출력
+        for sub_key, sub_value in value.items():
+            print(f"{sub_key} : {sub_value}")
+    
+    elif isinstance(value, list):
+        # 값이 리스트일 경우 각 요소를 개별적으로 출력
+        for item in value:
+            print(f"{key} : {item}")
+
+
